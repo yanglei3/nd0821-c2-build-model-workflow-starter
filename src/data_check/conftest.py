@@ -11,7 +11,7 @@ def pytest_addoption(parser):
     parser.addoption("--max_price", action="store")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='session', name='data')
 def data(request):
     run = wandb.init(job_type="data_tests", resume=True)
 
